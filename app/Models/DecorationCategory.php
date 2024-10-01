@@ -13,6 +13,7 @@ class DecorationCategory extends Model
         'name',
         'slug',
         'description',
+        'price',
         'status'
     ];
 }

@@ -15,12 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description')->nullable();
-            $table->string('address')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('email')->unique();
+            $table->decimal('price', 8, 2)->default(0);
             $table->string('slug')->unique();
             $table->boolean('status')->default(true);
             $table->timestamps();
+            $table->dropColumn(['address', 'phone', 'email']); // Drop multiple columns
         });
     }
 

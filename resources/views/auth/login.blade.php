@@ -1,6 +1,6 @@
 <x-guest-layout>
-    <div class="min-h-screen bg-cover bg-center flex items-center justify-center" style="background-image: url('{{ URL('images/wedding-backdrop.jpg') }}'); padding-top: 5rem; padding-bottom: 5rem;">
-        <div class="bg-gray-900 bg-opacity-25 rounded-lg p-8 max-w-md w-full">
+
+
             <x-authentication-card>
                 <x-slot name="logo">
                     <a href="{{ route('home') }}">
@@ -49,6 +49,4 @@
                     </div>
                 </form>
             </x-authentication-card>
-        </div>
-    </div>
 </x-guest-layout>

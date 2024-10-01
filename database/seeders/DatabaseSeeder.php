@@ -23,13 +23,14 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@admin.com',
+            'role' => 1,
         ]);
 
         User::factory(100)->create();
 
 
 
-        MusicCategory::factory(100)->create();
+
 
 
 

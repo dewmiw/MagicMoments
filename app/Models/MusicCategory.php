@@ -14,5 +14,6 @@ class MusicCategory extends Model
         'name',
         'slug',
         'description',
+        'price',
         'status'];
 }

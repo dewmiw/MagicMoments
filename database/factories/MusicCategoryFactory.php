@@ -20,6 +20,7 @@ class MusicCategoryFactory extends Factory
             'name' => $this->faker->name,
             'slug' => $this->faker->unique()->slug,
             'description' => $this->faker->text,
+            'price' => $this->faker->randomFloat(2, 0, 1000),
             'status' => $this->faker->boolean,
         ];
     }

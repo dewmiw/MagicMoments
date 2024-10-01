@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="min-h-screen bg-cover bg-center flex items-center justify-center" style="background-image: url('{{ URL('images/wedding-backdrop.jpg') }}'); padding-top: 5rem; padding-bottom: 5rem;">
+    <div class="min-h-screen bg-cover bg-center flex items-center justify-center" >
         <div class="bg-gray-900 bg-opacity-25 rounded-lg p-8 max-w-md w-full">
             <x-authentication-card>
                 <x-slot name="logo">
@@ -22,6 +22,15 @@
                         <x-label for="email" value="{{ __('Email') }}" class="block text-sm font-medium text-gray-300" />
                         <x-input id="email" class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" type="email" name="email" :value="old('email')" required autocomplete="username" />
                     </div>
+
+                    <div class="mt-4">
+                        <x-label for="role" class="block text-gray-700">Role</x-label>
+                        <select id="role" name="role" class="block mt-1 w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                            <option value="{{ \App\Enums\Role::Admin->value }}">Admin</option>
+                            <option value="{{ \App\Enums\Role::Customer->value }}">Customer</option>
+                        </select>
+                    </div>
+
 
                     <div class="mt-4">
                         <x-label for="password" value="{{ __('Password') }}" class="block text-sm font-medium text-gray-300" />

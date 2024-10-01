@@ -18,8 +18,9 @@ class RestaurantController extends Controller
      */
     public function index()
     {
+
         return view('restaurants.index', [
-            'restaurants' => Restaurant::orderBy('created_at','DESC')->paginate()
+            'restaurants' => Restaurant::all()
         ]);
 
     }

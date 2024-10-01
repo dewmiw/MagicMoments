@@ -1,5 +1,5 @@
 <nav x-data="{ open: false }" class="bg-white shadow-md border-b border-gray-200">
-    <!-- Primary Navigation Menu -->
+    <!-- Primary Navigation Restaurant -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex items-center">
@@ -27,15 +27,18 @@
                     <x-nav-link href="{{ route('decorationCategories') }}" :active="request()->routeIs('decorationCategories')" class="text-gray-700 hover:text-darkgoldenrod transition duration-300">
                         {{ __('Decoration') }}
                     </x-nav-link>
+                    @guest
                     <x-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')" class="text-gray-700 hover:text-darkgoldenrod transition duration-300">
                         {{ __('Login') }}
                     </x-nav-link>
                     <x-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')" class="text-gray-700 hover:text-darkgoldenrod transition duration-300">
                         {{ __('Register') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" class="text-gray-700 hover:text-gray-900 transition duration-300">
-                        {{ __('Dashboard') }}
+                    @endguest
+                    <x-nav-link href="{{ route('book-now') }}" :active="request()->routeIs('book-now')" class="text-gray-700 hover:text-gray-900 transition duration-300">
+                        {{ __('Book Now') }}
                     </x-nav-link>
+
                 </div>
             </div>
 
@@ -100,7 +103,7 @@
         </div>
     </div>
 
-    <!-- Responsive Navigation Menu -->
+    <!-- Responsive Navigation Restaurant -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
@@ -124,8 +127,8 @@
             <x-responsive-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
                 {{ __('Register') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+            <x-responsive-nav-link href="{{ route('book-now') }}" :active="request()->routeIs('book-now')">
+                {{ __('Book Now') }}
             </x-responsive-nav-link>
         </div>
 

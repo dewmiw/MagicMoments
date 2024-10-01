@@ -16,9 +16,10 @@ class MusicCategoryController extends Controller
     public function index()
     {
         return view('musicCategories.index', [
-            'musicCategories' => MusicCategory::orderBy('created_at','DESC')->paginate()
+            'musicCategories' => MusicCategory::orderBy('created_at', 'DESC')->paginate(10)
         ]);
     }
+
 
     /**
      * Show the form for creating a new resource.
