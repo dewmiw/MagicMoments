@@ -44,6 +44,6 @@ class BookingController extends Controller
     // Optionally send a confirmation email to the user
     Mail::to($request->input('email'))->send(new BookingConfirmation($bookingData));
 
-        return redirect()->route('book-now')->with('success', 'Booking successfully submitted.');
+        return redirect()->route('book-now')->with('success', 'Booking successfully submitted. We will contact you soon!');
     }
 }

@@ -6,7 +6,7 @@
             @if($bookings->isEmpty())
                 <p class="text-gray-600 text-center">No bookings available.</p>
             @else
-                <div class="overflow-y-auto h-[15vh] bg-white shadow-md rounded-lg">
+                <div class="overflow-y-auto h-[50vh] bg-white shadow-md rounded-lg">
                     <table class="min-w-full divide-y divide-gray-200">
                         <thead class="bg-gray-50">
                         <tr>

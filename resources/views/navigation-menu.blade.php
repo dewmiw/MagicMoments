@@ -39,12 +39,13 @@
                         {{ __('Book Now') }}
                     </x-nav-link>
                     @auth
-                    @if(\App\Enums\Role::Admin == Auth::user())
-                    <x-nav-link href="{{ route('management') }}" :active="request()->routeIs('management')" class="text-gray-700 hover:text-gray-900 transition duration-300">
-                        {{ __('Admin Management') }}
-                    </x-nav-link>
-                    @endif
+                        @if(Auth::user() && Auth::user()->email === 'admin1@admin.com')
+                            <x-nav-link href="{{ route('management') }}" :active="request()->routeIs('management')" class="text-gray-700 hover:text-gray-900 transition duration-300">
+                                {{ __('Admin Management') }}
+                            </x-nav-link>
+                        @endif
                     @endauth
+
                 </div>
             </div>
 

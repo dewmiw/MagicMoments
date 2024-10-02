@@ -1,9 +1,5 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-2xl text-gray-800 leading-tight">
-            {{ __('Book Your Event') }}
-        </h2>
-    </x-slot>
+
 
     <div class="py-12 bg-gray-100">
         <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
@@ -17,6 +13,9 @@
                 @endif
 
                 <h3 class="text-xl font-bold mb-6 text-center text-yellow-700 ">Let's Make Your Event Unforgettable!</h3>
+
+                <p>Provide below details, select your desired packages and book your event. We will contact you through the email you have provided for a customized service.</p><br>
+
                 <form action="{{ route('bookings.store') }}" method="POST">
                     @csrf
 
