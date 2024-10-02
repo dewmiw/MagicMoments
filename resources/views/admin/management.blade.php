@@ -10,7 +10,7 @@
                     <table class="min-w-full divide-y divide-gray-200">
                         <thead class="bg-gray-50">
                         <tr>
-                            @foreach(['Name', 'Email', 'Phone', 'Event Type', 'Event Date', 'Location', 'Menu Package', 'Music Package', 'Decoration Package'] as $header)
+                            @foreach(['Name', 'Email', 'Phone', 'Event Type', 'Event Date', 'Location', 'Menu Package', 'Music Package', 'Decoration Package', 'Status'] as $header)
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{ $header }}</th>
                             @endforeach
                         </tr>
@@ -21,6 +21,13 @@
                                 @foreach(['name', 'email', 'phone', 'event_type', 'event_date', 'location', 'menu_package_id', 'music_package_id', 'decoration_package_id'] as $field)
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{{ $booking->$field }}</td>
                                 @endforeach
+                                <!-- Add a dropdown for status selection (client-side only) -->
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    <select class="px-4 py-2 border border-gray-300 rounded-lg" onchange="updateStatus(this)">
+                                        <option value="Pending">Pending</option>
+                                        <option value="Done">Done</option>
+                                    </select>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -28,6 +35,17 @@
                 </div>
             @endif
         </section>
+
+        <script>
+            function updateStatus(selectElement) {
+                // Get the selected value
+                const status = selectElement.value;
+
+                // Optionally display a message or update the UI based on the selection
+                alert('Booking status changed to: ' + status);
+            }
+        </script>
+
 
         <!-- Package Forms Section -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
