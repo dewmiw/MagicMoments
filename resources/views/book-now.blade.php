@@ -50,10 +50,6 @@
                         </select>
                     </div>
 
-                    <div id="custom_event_type_div" class="mb-6 hidden">
-                        <label for="custom_event_type" class="block text-sm font-semibold text-gray-700">Specify Event Type</label>
-                        <input type="text" name="custom_event_type" id="custom_event_type" class="mt-1 block w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200">
-                    </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                         <div>

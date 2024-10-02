@@ -47,7 +47,7 @@ Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.st
 
 
 
-Route::get('/management', [ManagementController::class, 'index'])->name('management');
+Route::get('/management', [ManagementController::class, 'index'])->name('management')->middleware('admin');
 
 // Routes for creating new records
 Route::post('/restaurants/create', [ManagementController::class, 'createRestaurant'])->name('restaurants.create');
@@ -55,13 +55,13 @@ Route::post('/music_categories/create', [ManagementController::class, 'createMus
 Route::post('/decoration_categories/create', [ManagementController::class, 'createDecorationCategory'])->name('decoration_categories.create');
 
 
-/*Route::middleware([
+Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});*/
+    Route::get('/home', function () {
+        return view('Home');
+    })->name('home');
+});
 

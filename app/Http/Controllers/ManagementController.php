@@ -2,19 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use Illuminate\Http\Request;
 use App\Models\Restaurant;
 use App\Models\MusicCategory;
 use App\Models\DecorationCategory;
 
+
 class ManagementController extends Controller
 {
     public function index()
     {
+        $bookings = Booking::all();
         $restaurants = Restaurant::all();
         $musicCategories = MusicCategory::all();
         $decorationCategories = DecorationCategory::all();
-        return view('admin.management', compact('restaurants', 'musicCategories', 'decorationCategories'));
+        return view('admin.management', compact('restaurants', 'musicCategories', 'decorationCategories', 'bookings'));
     }
 
     // Create a new record for Restaurant
